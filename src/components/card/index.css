@@ -1,0 +1,6 @@
+.card__details {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+.card__btn{cursor: pointer;}
