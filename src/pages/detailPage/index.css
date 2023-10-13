@@ -1,0 +1,17 @@
+.details__container{
+    border: 1px solid gray;
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    background-color: rgb(238, 248, 248);
+}
+.details{
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.cities{
+    padding: 2px;
+    margin: 0px;
+}

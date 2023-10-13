@@ -4,3 +4,5 @@
     width: 80%;
 }
 .card__btn{cursor: pointer;}
+.rt-r-jc-star{align-items: center;}
+.flag__img__container{margin-bottom: 10px; display: flex; justify-content: space-between;}
