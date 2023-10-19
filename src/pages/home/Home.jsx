@@ -4,19 +4,22 @@ import { useEffect } from "react"
 import CardSmall from "../../components/card"
 import "../home/home.css"
 import Pagination from "../../components/pagination/Pagination"
+import { BASE_URL_CD } from "../../config/Config"
 
 const Home = () => {
   const [data, setData] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
-  const [postPerPage, setPostPerPage] = useState(30)
+  const [postPerPage, setPostPerPage] = useState(24)
 
   const lastPostIndex = currentPage * postPerPage
   const firstPostIndex = lastPostIndex - postPerPage
   const currentPost = data.slice(firstPostIndex, lastPostIndex)
 
-  const fetchData = async () => {
+  const fetchData = () => {
     axios
-      .get("https://countriesnow.space/api/v0.1/countries/capital")
+      .get(
+        `${BASE_URL_CD}/info?returns=flag`
+      )
       .then((response) => {
         console.log(response.data.data)
         setData(response.data.data)
@@ -37,11 +40,13 @@ const Home = () => {
           return (
             <div className="card__box" key={i}>
               <CardSmall
+                img={ele.flag}
                 countryName={ele.name}
                 capital={ele.capital}
                 key={i}
-                countryCode={ele.iso3}
+                countryCode={ele.unicodeFlag}
                 page={currentPost}
+                id={ele.name}
               />
             </div>
           )
