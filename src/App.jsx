@@ -1,4 +1,4 @@
-import { BrowserRouter, Route,Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import DetailsPage from "./pages/detailPage"
 import Home from "./pages/home/Home"
 
@@ -8,7 +8,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detailspage/:id" element={<DetailsPage/>} />
+          <Route path="/detailspage/:countryName/:iso2/:iso3" element={<DetailsPage />} />
         </Routes>
       </BrowserRouter>
     </>

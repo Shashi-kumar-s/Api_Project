@@ -1,1 +1,4 @@
-export const BASE_URL_CD="https://countriesnow.space/api/v0.1/countries"
+import axios from "axios"
+export const url = axios.create({
+  baseURL: "https://countriesnow.space/api/v0.1/countries",
+})

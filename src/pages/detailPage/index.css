@@ -1,4 +1,4 @@
-.details__container{
+.details__container {
     border: 1px solid gray;
     border-radius: 20px;
     width: 50%;
@@ -6,12 +6,56 @@
     padding: 10px;
     background-color: rgb(238, 248, 248);
 }
-.details{
+
+.details {
     display: flex;
     flex-flow: row wrap;
 
 }
-.cities{
+
+.cities {
     padding: 2px;
     margin: 0px;
+}
+
+
+.datail__page {
+    display: flex;
+    padding: 60px 50px;
+    gap: 40px;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 40px;
+    height: 70vh;
+    background-color: rgb(214, 208, 219);
+    width: 85%;
+    margin: auto;
+
+}
+
+.detail__card {
+    width: 70%;
+}
+
+.category__list {
+    background-color: rgb(166, 144, 184);
+    box-shadow: rgba(245, 247, 248, 0.12) 0px 2px 4px 0px, rgba(114, 119, 122, 0.32) 0px 2px 16px 0px;
+    color: #fff;
+    height: 400px;
+    padding: 10px 30px;
+    width: 170px;
+    border-radius: 20px;
+    width: 20%;
+}
+
+li {
+    list-style: none;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 38px;
+    padding: 5px 0;
+}
+.icon{
+    padding-right: 12px;
 }

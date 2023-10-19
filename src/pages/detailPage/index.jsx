@@ -1,56 +1,51 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import { BASE_URL_CD } from "../../config/Config"
+import { useCallback, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import "../detailPage/index.css"
+import { url } from "../../config/Config"
+import Icon from "../../components/fontawesome"
+import PopulationCard from "../../components/detailcard/populationCard"
+import LocationCard from "../../components/detailcard/locationCard"
+import FlagCard from "../../components/detailcard/flagCard"
+import CurrencyCard from "../../components/detailcard/currencyCard"
+import CapitalCard from "../../components/detailcard/capitalCard"
+import CitiesCard from "../../components/detailcard/citiesCard"
+import CodeCard from "../../components/detailcard/codeCard"
+import StateCard from "../../components/detailcard/stateCard"
+import { categoryData } from "../../utilities/category"
 
 const DetailsPage = () => {
-  const [detailsData, setDetailsData] = useState([])
-  const { id } = useParams()
-  console.log(id, "++++++++")
+  const { countryName, iso3, iso2 } = useParams()
 
-  const fetchData = () => {
-    axios
-      .get(
-        `${BASE_URL_CD}//info?returns= currency%2Cflag%2CunicodeFlag%2Cdialcode%2Ccities`
-      )
-      .then((response) => {
-        console.log(response.data.data)
-        setDetailsData(response.data.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }
-
-  useEffect(() => {
-    fetchData()
+  const handleClick = useCallback(() => {
+    url.post("/population", { iso3: iso3 }).then((response) => {
+    })
   }, [])
 
   return (
-    <>
-      {detailsData.map((ele, i) => {
-        if (ele.name.toLowerCase() === id.toLowerCase()) {
+    <div className="datail__page">
+      <div className="category__list">
+        {categoryData.map((ele) => {
           return (
-            <div key={i} className="details__container">
-              <img src={ele.flag} alt="flag" width={"200px"} />
-              <h2>{ele.name}</h2>
-              <div className="details">
-                <span><b>Cities:-</b></span>
-                {ele.cities.slice(0,20).map((ele, i) => {
-                  return <p key={i} className="cities">{ele} ,</p>
-                })}
-              </div>
-              <p><b>Currency :- </b>{ele.currency}</p>
-              <p></p>
-            </div>
+            <>
+              <li onClick={handleClick}>
+                <Icon className={"icon"} iconName={ele.iconName} />
+                {ele.name}
+              </li>
+            </>
           )
-        } else {
-          ;<p>country name not found !!</p>
-        }
-        return
-      })}
-    </>
+        })}
+      </div>
+      <div className="detail__card">
+        {/* <PopulationCard /> */}
+        {/* <LocationCard /> */}
+        {/* <FlagCard /> */}
+        {/* <CurrencyCard /> */}
+        {/* <CapitalCard /> */}
+        {/* <CitiesCard /> */}
+        {/* <CodeCard /> */}
+        <StateCard />
+      </div>
+    </div>
   )
 }
 
