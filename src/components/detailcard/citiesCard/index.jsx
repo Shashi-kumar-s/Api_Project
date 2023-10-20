@@ -1,10 +1,15 @@
 import "../citiesCard/style.css"
-const CitiesCard = () => {
+const CitiesCard = ({ allData }) => {
   return (
-    <div className='city__card'>
-    <h1>Title</h1>
-    <p>CitiesCard</p>
-  </div>
+    <div className="city__card">
+      <h1>City</h1>
+      <div className="cities">
+        {allData.length > 0 &&
+          allData.map((ele, i) => {
+            return <span key={i}>{ele}</span>
+          })}
+      </div>
+    </div>
   )
 }
 

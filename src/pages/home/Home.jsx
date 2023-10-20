@@ -4,6 +4,7 @@ import CardSmall from "../../components/card"
 import "../home/home.css"
 import Pagination from "../../components/pagination/Pagination"
 import { url } from "../../config/Config"
+import { ClipLoader } from "react-spinners"
 
 const Home = () => {
   const [data, setData] = useState([])
@@ -16,7 +17,6 @@ const Home = () => {
 
   useEffect(() => {
     url.get("/flag/images").then((response) => {
-      console.log(response.data);
       setData(response.data.data)
     })
   }, [])
@@ -24,21 +24,27 @@ const Home = () => {
   return (
     <div className="card__container">
       <div className="main">
-        {currentPost.map((ele, i) => {
-          return (
-            <div className="card__box" key={i}>
-              <CardSmall
-                img={ele.flag}
-                countryName={ele.name}
-                iso3={ele.iso3}
-                key={i}
-                iso2={ele.iso2}
-                page={currentPost}
-                id={ele.name}
-              />
-            </div>
-          )
-        })}
+        {data.length == 0 ? (
+          <div style={{ margin: "auto", paddingTop: "100px" }}>
+            <ClipLoader size={100} />
+          </div>
+        ) : (
+          currentPost.map((ele, i) => {
+            return (
+              <div className="card__box" key={i}>
+                <CardSmall
+                  img={ele.flag}
+                  countryName={ele.name}
+                  iso3={ele.iso3}
+                  key={i}
+                  iso2={ele.iso2}
+                  page={currentPost}
+                  id={ele.name}
+                />
+              </div>
+            )
+          })
+        )}
       </div>
       <div className="pagination">
         <Pagination

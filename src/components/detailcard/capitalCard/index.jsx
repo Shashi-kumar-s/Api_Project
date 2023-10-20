@@ -1,9 +1,9 @@
 import "../capitalCard/style.css"
-const CapitalCard = () => {
+const CapitalCard = ({allData}) => {
   return (
     <div className='capital__card'>
-      <h1>Title</h1>
-      <p>capital__card</p>
+      <h1>{allData.name}</h1>
+      <p><span>Capital :-</span>{allData.capital}</p>
     </div>
   )
 }

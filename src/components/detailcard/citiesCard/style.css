@@ -6,5 +6,21 @@
     background-color: rgb(189, 236, 232);
     box-shadow: rgba(245, 247, 248, 0.12) 0px 2px 4px 0px, rgba(114, 119, 122, 0.32) 0px 2px 16px 0px;
     margin: auto;
-   
+}
+
+.city__card h1 {
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+.cities {
+    display: flex;
+    flex-flow: row wrap;
+}
+.city__card span{
+    margin: 2px;
+    padding: 2px 4px;
+    border-radius: 6px;
+    background-color: brown;
+    color: #fff;
 }
