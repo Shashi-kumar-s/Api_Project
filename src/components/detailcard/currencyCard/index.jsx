@@ -1,10 +1,10 @@
 import "../currencyCard/style.css"
-const CurrencyCard = () => {
+const CurrencyCard = ({ allData }) => {
   return (
-    <div className='currency__card'>
-    <h1>Title</h1>
-    <p>CurrencyCard</p>
-  </div>
+    <div className="currency__card">
+      <h1>{allData.name}</h1>
+      <p><span>Currency :-</span> {allData.currency}</p>
+    </div>
   )
 }
 

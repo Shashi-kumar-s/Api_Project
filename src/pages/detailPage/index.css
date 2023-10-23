@@ -21,7 +21,7 @@
 
 .datail__page {
     display: flex;
-    padding: 60px 50px;
+    padding: 60px 30px;
     gap: 40px;
     border: 1px solid;
     border-radius: 15px;
@@ -35,6 +35,7 @@
 
 .detail__card {
     width: 70%;
+    height: 400px;
 }
 
 .category__list {

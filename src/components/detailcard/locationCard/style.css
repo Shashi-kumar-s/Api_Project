@@ -6,5 +6,8 @@
     background-color: rgb(189, 236, 232);
     box-shadow: rgba(245, 247, 248, 0.12) 0px 2px 4px 0px, rgba(114, 119, 122, 0.32) 0px 2px 16px 0px;
     margin: auto;
-   
+    text-align: center;
 }
+.location__card h1{color: blue;}
+.loca{font-weight: 600;}
+.location__box{border: 1px solid;border-radius: 10px;background-color: brown;color: #fff;}
