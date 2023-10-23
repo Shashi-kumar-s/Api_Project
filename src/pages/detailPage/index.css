@@ -23,11 +23,11 @@
     display: flex;
     padding: 60px 30px;
     gap: 40px;
-    border: 1px solid;
+    border: 1px solid rgb(193, 149, 230);
     border-radius: 15px;
     margin: 40px;
     height: 70vh;
-    background-color: rgb(214, 208, 219);
+    background-color: rgb(243, 240, 247);
     width: 85%;
     margin: auto;
 
@@ -38,10 +38,12 @@
     height: 400px;
 }
 
+.common__card{
+    background-color: #e7ebf0;
+}
 .category__list {
-    background-color: rgb(166, 144, 184);
-    box-shadow: rgba(245, 247, 248, 0.12) 0px 2px 4px 0px, rgba(114, 119, 122, 0.32) 0px 2px 16px 0px;
-    color: #fff;
+    background-color: rgb(228, 220, 233);
+    box-shadow: rgba(219, 196, 223, 0.12) 0px 2px 4px 0px, rgba(187, 197, 202, 0.32) 0px 2px 16px 0px;
     height: 400px;
     padding: 10px 30px;
     width: 170px;
@@ -56,7 +58,9 @@ li {
     cursor: pointer;
     line-height: 38px;
     padding: 5px 0;
+    color: #646060;
 }
+li:hover{color: blue;}
 .icon{
     padding-right: 12px;
 }

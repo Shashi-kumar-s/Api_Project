@@ -11,14 +11,13 @@ import {
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const PopulationChart = ({ populationData }) => {
-  console.log("pop", populationData.populationCounts)
-
+  console.log("&&&&&&&%%%%%",populationData);
+console.log(populationData,"popu***");
   const year = []
   const population = []
 
   populationData.populationCounts !== undefined &&
     populationData.populationCounts.map((ele) => {
-      console.log(ele, "???????")
       year.push(ele.year)
       population.push(ele.value)
     })
