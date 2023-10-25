@@ -1,4 +1,5 @@
 import "../capitalCard/style.css"
+import propTypes from "prop-types"
 
 const CapitalCard = ({ allData }) => {
   return (
@@ -12,4 +13,7 @@ const CapitalCard = ({ allData }) => {
   )
 }
 
+CapitalCard.propTypes = {
+  allData: propTypes.object,
+}
 export default CapitalCard

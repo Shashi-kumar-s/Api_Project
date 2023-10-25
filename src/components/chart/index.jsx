@@ -9,10 +9,9 @@ import {
   Legend,
 } from "chart.js"
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
+import propTypes from "prop-types"
 
 const PopulationChart = ({ populationData }) => {
-  console.log("&&&&&&&%%%%%",populationData);
-console.log(populationData,"popu***");
   const year = []
   const population = []
 
@@ -68,5 +67,8 @@ console.log(populationData,"popu***");
     </div>
   )
 }
+PopulationChart.propTypes={
+  populationData:propTypes.object
 
+}
 export default PopulationChart

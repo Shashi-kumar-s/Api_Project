@@ -1,6 +1,8 @@
 import "../locationCard/style.css"
+import propTypes from "prop-types"
+
+
 const LocationCard = ({ allData }) => {
-  console.log(allData, "??????")
   return (
     <div className="location__card common__card">
       <h1>{allData.name}</h1>
@@ -17,6 +19,9 @@ const LocationCard = ({ allData }) => {
       </div>
     </div>
   )
+}
+LocationCard.propTypes = {
+  allData: propTypes.object,
 }
 
 export default LocationCard

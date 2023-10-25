@@ -1,6 +1,8 @@
 import "../flagCard/style.css"
+import propTypes from "prop-types"
+
+
 const FlagCard = ({ allData }) => {
-  console.log("***", allData)
   return (
     <div className="flag__card common__card">
       <h1>{allData.name}</h1>
@@ -9,6 +11,9 @@ const FlagCard = ({ allData }) => {
       </div>
     </div>
   )
+}
+FlagCard.propTypes = {
+  allData: propTypes.object,
 }
 
 export default FlagCard

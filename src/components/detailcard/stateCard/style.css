@@ -1,8 +1,31 @@
-.state__card {
+.state__main {
     padding: 10px;
-    height: 300px;
+    height: 400px;
     border-radius: 10px;
     width: 500px;
     margin: auto;
-   
+
+}
+
+.state__main h1 {
+    color: blue;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+.state__box {
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: auto;
+    max-height: 45vh;
+    padding: 20px;
+}
+.state__box span{
+    margin: 2px !important;
+    padding: 2px 4px;
+    border-radius: 6px;
+    background-color: brown;
+    color: #fff;
+    height: 22px;
+
 }
