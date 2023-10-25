@@ -1,6 +1,7 @@
 .main {
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .card__box {
@@ -8,11 +9,17 @@
 }
 
 .page__button {
-    margin: 5px !important ;
+    margin: 5px !important;
     cursor: pointer !important;
 }
 
 .pagination {
     display: flex;
     justify-content: center;
+}
+
+.error__msg {
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
 }

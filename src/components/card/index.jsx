@@ -9,7 +9,7 @@ const CardSmall = (props) => {
   return (
     <Card className="smallcard">
       <Box className="flag__img__container">
-        <img src={img} alt="flag" width={"80px"} />
+        {img && <img src={img} alt="flag" width={"80px"} />}
         <Box>
           <Link to={`detailspage/${countryName}/${iso2}/${iso3}`}>
             <Tooltip content="check Details">

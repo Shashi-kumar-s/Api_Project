@@ -12,6 +12,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 import propTypes from "prop-types"
 
 const PopulationChart = ({ populationData }) => {
+  console.log(populationData,"**********");
   const year = []
   const population = []
 
