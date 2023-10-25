@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const CardSmall = (props) => {
   const { countryName, iso3, iso2,img } = props
   return (
-    <Card style={{ width: 200, height: 130 }}>
+    <Card style={{ width: 200, height: 130 }} className="smallcard">
       <Box className="flag__img__container">
         <img src={img} alt="flag" width={"80px"} />
         <Box>

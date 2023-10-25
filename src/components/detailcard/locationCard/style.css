@@ -3,11 +3,11 @@
     height: 300px;
     border-radius: 10px;
     width: 500px;
-    background-color: rgb(189, 236, 232);
-    box-shadow: rgba(245, 247, 248, 0.12) 0px 2px 4px 0px, rgba(114, 119, 122, 0.32) 0px 2px 16px 0px;
     margin: auto;
     text-align: center;
 }
-.location__card h1{color: blue;}
+.location__card span{color: #000;}
+.location__card p{color: #2320b3;}
+.location__card h1{color: rgb(93, 93, 235);}
 .loca{font-weight: 600;}
-.location__box{border: 1px solid;border-radius: 10px;background-color: brown;color: #fff;}
+.location__box{border: 1px solid;border-radius: 10px;background-color: rgb(226, 211, 211);color: #fff;}

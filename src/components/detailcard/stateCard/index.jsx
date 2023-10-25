@@ -2,7 +2,7 @@ import "../stateCard/style.css"
 const StateCard = (allData) => {
   console.log(allData, "*******")
   return (
-    <div className="state__card">
+    <div className="state__card common__card">
       <h1>{allData.name}</h1>
       <div>
         {/* {allData !==undefined && allData.states.map((ele, i) => {
