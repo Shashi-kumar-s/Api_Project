@@ -1,6 +1,6 @@
 .city__card {
     padding: 10px;
-    height: 300px;
+    height: 400px;
     border-radius: 10px;
     width: 500px;
     margin: auto;
@@ -8,17 +8,23 @@
 
 .city__card h1 {
     text-align: center;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #000;
+    color: rgb(53, 53, 230);
 }
 
 .cities {
     display: flex;
     flex-flow: row wrap;
+    overflow-y: auto;
+    max-height: 45vh;
+    padding: 20px;
 }
 .city__card span{
-    margin: 2px;
+    margin: 2px !important;
     padding: 2px 4px;
     border-radius: 6px;
     background-color: brown;
     color: #fff;
+    height: 22px;
+
 }

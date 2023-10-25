@@ -1,4 +1,6 @@
 import "../citiesCard/style.css"
+import propTypes from "prop-types"
+
 const CitiesCard = ({ allData }) => {
   return (
     <div className="city__card common__card">
@@ -11,6 +13,9 @@ const CitiesCard = ({ allData }) => {
       </div>
     </div>
   )
+}
+CitiesCard.propTypes = {
+  allData: propTypes.object,
 }
 
 export default CitiesCard

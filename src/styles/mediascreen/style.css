@@ -48,6 +48,7 @@
         font-size: 17px;
     }
 }
+
 @media(max-width:767px) {
     .datail__page {
         display: block !important;
@@ -148,4 +149,30 @@
     h1 {
         font-size: 17px;
     }
+
+    .card__box {
+        width: 100%;
+    }
+
+    .smallcard {
+        width: 100% !important;
+    }
+
+    .detailPage_main {
+        margin: 0;
+        padding: 2px;
+    }
+
+    .go__to__home {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
+
+    span {
+        font-size: 15px !important;
+    }
+    p{font-size: 15px;}
 }

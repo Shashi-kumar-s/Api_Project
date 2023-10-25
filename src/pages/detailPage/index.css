@@ -1,16 +1,28 @@
-.details__container {
-    border: 1px solid gray;
-    border-radius: 20px;
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-    background-color: rgb(238, 248, 248);
+.detailPage_main {
+    border: 1px solid rgb(193, 149, 230);
+    border-radius: 15px;
+    background-color: rgb(243, 240, 247);
+    margin: 40px;
+    padding: 20px;
+}
+
+.go__to__home {
+    background-color: rgb(150, 150, 221);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px 0 0 10px;
+}
+
+.go__to__home:hover {
+    background-color: rgb(117, 117, 214);
 }
 
 .details {
     display: flex;
     flex-flow: row wrap;
-
 }
 
 .cities {
@@ -18,19 +30,13 @@
     margin: 0px;
 }
 
-
 .datail__page {
     display: flex;
-    padding: 60px 30px;
     gap: 40px;
-    border: 1px solid rgb(193, 149, 230);
-    border-radius: 15px;
-    margin: 40px;
+    padding: 15px;
     height: 70vh;
-    background-color: rgb(243, 240, 247);
     width: 85%;
     margin: auto;
-
 }
 
 .detail__card {
@@ -38,9 +44,10 @@
     height: 400px;
 }
 
-.common__card{
+.common__card {
     background-color: #e7ebf0;
 }
+
 .category__list {
     background-color: rgb(228, 220, 233);
     box-shadow: rgba(219, 196, 223, 0.12) 0px 2px 4px 0px, rgba(187, 197, 202, 0.32) 0px 2px 16px 0px;
@@ -60,7 +67,28 @@ li {
     padding: 5px 0;
     color: #646060;
 }
-li:hover{color: blue;}
-.icon{
+
+li:hover {
+    color: blue;
+}
+
+.icon {
     padding-right: 12px;
+}
+
+.active-category {
+    color: blue;
+}
+
+.loader__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.error__msg {
+    color: red;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
 }

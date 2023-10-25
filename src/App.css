@@ -1,0 +1,16 @@
+.App {
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(228, 225, 225);
+        border-radius: 100px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--ninth-bg-color);
+
+    }
+
+}

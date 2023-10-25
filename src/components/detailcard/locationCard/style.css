@@ -1,13 +1,31 @@
 .location__card {
     padding: 10px;
-    height: 300px;
+    height: 400px;
     border-radius: 10px;
     width: 500px;
     margin: auto;
     text-align: center;
 }
-.location__card span{color: #000;}
-.location__card p{color: #2320b3;}
-.location__card h1{color: rgb(93, 93, 235);}
-.loca{font-weight: 600;}
-.location__box{border: 1px solid;border-radius: 10px;background-color: rgb(226, 211, 211);color: #fff;}
+
+.location__card span {
+    color: #000;
+}
+
+.location__card p {
+    color: #2320b3;
+}
+
+.location__card h1 {
+    color: rgb(93, 93, 235);
+}
+
+.loca {
+    font-weight: 600;
+}
+
+.location__box {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(226, 211, 211);
+    color: #fff;
+}

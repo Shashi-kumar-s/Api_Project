@@ -1,4 +1,6 @@
 import "../codeCard/style.css"
+import propTypes from "prop-types"
+
 const CodeCard = ({allData}) => {
   return (
     <div className='code__card common__card'>
@@ -8,5 +10,7 @@ const CodeCard = ({allData}) => {
   </div>
   )
 }
-
+CodeCard.propTypes = {
+  allData: propTypes.object,
+}
 export default CodeCard

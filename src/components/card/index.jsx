@@ -2,13 +2,14 @@ import { ArrowRightIcon } from "@radix-ui/react-icons"
 import { Avatar, Card, Box, Flex, Text, Tooltip } from "@radix-ui/themes"
 import "../card/index.css"
 import { Link } from "react-router-dom"
+import propTypes from "prop-types"
 
 const CardSmall = (props) => {
-  const { countryName, iso3, iso2,img } = props
+  const { countryName, iso3, iso2, img } = props
   return (
-    <Card style={{ width: 200, height: 130 }} className="smallcard">
+    <Card className="smallcard">
       <Box className="flag__img__container">
-        <img src={img} alt="flag" width={"80px"} />
+        {img && <img src={img} alt="flag" width={"80px"} />}
         <Box>
           <Link to={`detailspage/${countryName}/${iso2}/${iso3}`}>
             <Tooltip content="check Details">
@@ -32,6 +33,12 @@ const CardSmall = (props) => {
       </Flex>
     </Card>
   )
+}
+CardSmall.propTypes = {
+  countryName: propTypes.string,
+  iso2: propTypes.string,
+  iso3: propTypes.string,
+  img: propTypes.string,
 }
 
 export default CardSmall

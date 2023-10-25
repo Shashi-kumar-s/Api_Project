@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
 import "../detailPage/index.css"
 import { url } from "../../config/Config"
 import Icon from "../../components/fontawesome"
@@ -12,88 +12,125 @@ import CodeCard from "../../components/detailcard/codeCard"
 import StateCard from "../../components/detailcard/stateCard"
 import { categoryData } from "../../utilities/category"
 import PopulationChart from "../../components/chart"
-import { ClipLoader } from "react-spinners"
 import "../../styles/mediascreen/style.css"
+import { ColorRing } from "react-loader-spinner"
 
 const DetailsPage = () => {
   const { countryName, iso3, iso2 } = useParams()
-  const [allData, setAllData] = useState("")
-  const [card, setCard] = useState()
+  const [card, setCard] = useState([])
+  const [activeCategoryId, setActiveCategoryId] = useState(null)
+  const [loader, setLoader] = useState(null)
 
   const CallApi = async (endPoint, param) => {
-    const response = await url.post(`/${endPoint}`, param)
-    setAllData(response.data.data)
-    return response.data.data
+    const response= await url.post(`/${endPoint}`, param)
+    console.log(response,"^^^^^^^^^");
+    return response
   }
 
   useEffect(() => {
-  handleClick("Population")
+    handleClick("Population")
   }, [])
 
-  console.log(card, "helllllllloooooooooo1111")
-
-  const handleClick = async (ele) => {
+  const handleClick = async (ele, id) => {
+    setActiveCategoryId(id)
+    setLoader(true)
+    let newCard = null
     switch (ele) {
       case "Population":
-        const data1 = await CallApi("population", { iso3: iso3 })
-        if (data1) {
-          setCard(<PopulationChart populationData={data1} />)
+        const populationData = await CallApi("population", { iso3: iso3 })
+        if (populationData) {
+          setActiveCategoryId(1)
+          newCard = <PopulationChart populationData={populationData.data.data} />
         }
         break
-     
       case "Location":
-        CallApi("positions", { iso2: iso2 })
-        return <LocationCard allData={allData} />
-
+        const locationData = await CallApi("positions", { iso2: iso2 })
+        if (locationData) {
+          newCard = <LocationCard allData={locationData.data.data} />
+        }
+        break
       case "Flag":
-        CallApi("flag/images", { iso2: iso2 })
-        return <FlagCard allData={allData} />
-
+        const flagData = await CallApi("flag/images", { iso2: iso2 })
+        if (flagData) {
+          newCard = <FlagCard allData={flagData.data.data} />
+        }
+        break
       case "Currency":
-        CallApi("currency", { country: countryName })
-        return <CurrencyCard allData={allData} />
-
+        const currencyData = await CallApi("currency", { country: countryName })
+        if (currencyData) {
+          newCard = <CurrencyCard allData={currencyData.data.data} />
+        }
+        break
       case "Capital":
-        CallApi("capital", { country: countryName })
-        return <CapitalCard allData={allData} />
-
+        const capitalData = await CallApi("capital", { country: countryName })
+        if (capitalData) {
+          newCard = <CapitalCard allData={capitalData.data.data} />
+        }
+        break
       case "Cities":
-        CallApi("cities", { country: countryName })
-        return <CitiesCard allData={allData} />
-
+        const citiesData = await CallApi("cities", { country: countryName })
+        if (citiesData) {
+          newCard = <CitiesCard allData={citiesData.data.data} />
+        }
+        break
       case "Codes":
-        CallApi("codes", { country: countryName })
-        return <CodeCard allData={allData} />
-
+        const codeData = await CallApi("codes", { country: countryName })
+        if (codeData) {
+          newCard = <CodeCard allData={codeData.data.data} />
+        }
+        break
       case "States":
-        CallApi("states", { country: countryName })
-        return <StateCard allData={allData} />
-
+        const stateData = await CallApi("states", { country: countryName })
+        if (stateData) {
+          newCard = <StateCard allData={stateData.data.data} />
+        }
+        break
       default:
         ele
         break
     }
+    setLoader(false)
+    setCard(newCard)
   }
 
   return (
-    <div className="datail__page">
-      <div className="category__list">
-        {categoryData.map((ele) => {
-          return (
-            <li onClick={() => setCard(handleClick(ele.name))} key={ele.id}>
-              <Icon className={"icon"} iconName={ele.iconName} />
-              {ele.name}
-            </li>
-          )
-        })}
-      </div>
-      {allData == "" ? (
-        <div style={{ margin: "auto", paddingTop: "100px" }}>
-          <ClipLoader size={100} />
+    <div className="detailPage_main">
+      <Link to="/">
+        <button className="go__to__home">Back To HomePage</button>
+      </Link>
+      <div className="datail__page">
+        <div className="category__list">
+          {categoryData.map((ele) => {
+            return (
+              <li
+                onClick={() => handleClick(ele.name, ele.id)}
+                key={ele.id}
+                className={ele.id === activeCategoryId ? "active-category" : ""}
+              >
+                <Icon className={"icon"} iconName={ele.iconName} />
+                {ele.name}
+              </li>
+            )
+          })}
         </div>
-      ) : (
-        <div className="detail__card">{card}</div>
-      )}
+        <div className="detail__card">
+          {loader ? (
+            <div className="loader__box">
+              <ColorRing
+                visible={true}
+                height="100"
+                width="100"
+                ariaLabel="blocks-loading"
+                wrapperStyle={{}}
+                wrapperClass="blocks-wrapper"
+                colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+              />
+            </div>
+          ) : (
+            <div>{card}</div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }

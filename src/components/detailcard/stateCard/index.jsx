@@ -1,21 +1,21 @@
 import "../stateCard/style.css"
-const StateCard = (allData) => {
-  console.log(allData, "*******")
+import propTypes from "prop-types"
+
+const StateCard = ({ allData }) => {
   return (
-    <div className="state__card common__card">
+    <div className="state__main common__card">
       <h1>{allData.name}</h1>
-      <div>
-        {/* {allData !==undefined && allData.states.map((ele, i) => {
-          return (
-            <div key={i}>
-              <p>{ele.name}</p>
-              <p>{ele.state_code}</p>
-            </div>
-          )
-        })} */}
+      <div className="state__box">
+        {allData.states.map((ele, i) => {
+          return <span>{ele.name}</span>
+        })}
       </div>
     </div>
   )
+}
+
+StateCard.propTypes = {
+  allData: propTypes.object,
 }
 
 export default StateCard
